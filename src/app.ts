@@ -55,7 +55,7 @@ app.get('/google/redirect', async (req: Request,res: Response,next: NextFunction
 
     if (oauth2Client.credentials && oauth2Client.credentials.access_token) {
         // User is already authenticated, redirect or show a "Logged In" message.
-        res.send("You are already logged in.");
+        res.send("Hi Nila You are already logged in.");
         console.log("cvbnm,")
     }
     else{
@@ -86,7 +86,7 @@ app.get('/google/redirect', async (req: Request,res: Response,next: NextFunction
         calendarId: "primary",
         auth:oauth2Client,
         requestBody:{
-            summary: "Meet with",
+            summary: "Meet with Nila",
             description:"description",
             start:{
                 dateTime:  dayjs(new Date()).add(1, 'day').toISOString(),
