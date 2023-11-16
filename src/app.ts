@@ -68,7 +68,7 @@ app.get('/google/redirect', async (req: Request,res: Response,next: NextFunction
             // Save these somewhere safe so they can be used at a later time.
             const {tokens} = await oauth2Client.getToken(code)
             oauth2Client.setCredentials(tokens);
-            console.log(oauth2Client)
+            // console.log(oauth2Client)
             res.send("Logged In Successfully");
         }
         catch (error) {
@@ -81,7 +81,7 @@ app.get('/google/redirect', async (req: Request,res: Response,next: NextFunction
 
 
   app.get('/schedule_event', async (req: Request,res: Response,next: NextFunction)=>{
-
+    // console.log(oauth2Client)
     await calendar.events.insert({
         calendarId: "primary",
         auth:oauth2Client,
@@ -98,7 +98,7 @@ app.get('/google/redirect', async (req: Request,res: Response,next: NextFunction
             }
         }
     });
-
+   console.log(calendar.events)
     res.send("scheduled")
 
   });
